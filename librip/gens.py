@@ -12,6 +12,21 @@ import random
 
 def field(items, *args):
     assert len(args) > 0
+    if len(args) == 1:
+        for i in items:
+            yield i[args[0]]
+    else:
+        for i in items:
+            reg_dict = {}
+            for tag in args:
+                if i[tag] is not None:
+                    reg_dict[tag] = i[tag]
+            if reg_dict == {}:
+                continue
+            else:
+                yield reg_dict
+                
+    
     # Необходимо реализовать генератор 
 
 

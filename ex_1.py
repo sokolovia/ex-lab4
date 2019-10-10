@@ -8,4 +8,6 @@ goods = [
     {'title': 'Вешалка для одежды', 'price': 800, 'color': 'white'}
 ]
 
+for i in field(goods, 'title', 'price'): print(i)
+
 # Реализация задания 1
