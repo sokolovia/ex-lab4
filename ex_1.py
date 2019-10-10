@@ -10,4 +10,5 @@ goods = [
 
 for i in field(goods, 'title', 'price'): print(i)
 
+
 # Реализация задания 1
