@@ -35,3 +35,15 @@
 # test_4
 # 1
 # 2
+def print_result(func_test):
+    def decoration():
+        managed_func = func_test()
+        print(func_test.__name__)
+        if type(managed_func) == list:
+            for i in managed_func: print(str(i))
+        elif type(managed_func) == dict:
+            for key in managed_func.keys():
+                print(key + ' = ' + str(managed_func[key]))
+        else:
+            print(managed_func)
+    return decoration
