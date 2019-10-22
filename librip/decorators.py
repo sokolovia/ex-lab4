@@ -36,8 +36,8 @@
 # 1
 # 2
 def print_result(func_test):
-    def decoration():
-        managed_func = func_test()
+    def decoration(*args):
+        managed_func = func_test(*args)
         print(func_test.__name__)
         if type(managed_func) == list:
             for i in managed_func: print(str(i))
@@ -46,4 +46,5 @@ def print_result(func_test):
                 print(key + ' = ' + str(managed_func[key]))
         else:
             print(managed_func)
+        return managed_func
     return decoration
